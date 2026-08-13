@@ -62,7 +62,15 @@ def _css() -> str:
         color: var(--hx-bone);
     }}
 
-    h1, h2, h3 {{ font-family: var(--hx-display); font-weight: 600; }}
+    /* Streamlit's own heading rules out-specify a bare class selector, so
+       these need !important or the display face silently reverts to sans. */
+    h1, h2, h3,
+    [data-testid="stMarkdownContainer"] h1,
+    [data-testid="stMarkdownContainer"] h2,
+    [data-testid="stMarkdownContainer"] h3 {{
+        font-family: var(--hx-display) !important;
+        font-weight: 600;
+    }}
 
     /* Trim Streamlit's default chrome without hiding the menu entirely. */
     #MainMenu {{ visibility: hidden; }}
@@ -71,7 +79,7 @@ def _css() -> str:
 
     /* ---- Eyebrow: small caps section label -------------------------- */
     .hx-eyebrow {{
-        font-family: var(--hx-data);
+        font-family: var(--hx-data) !important;
         font-size: 0.72rem;
         letter-spacing: 0.22em;
         text-transform: uppercase;
@@ -80,8 +88,8 @@ def _css() -> str:
     }}
 
     /* ---- Type scale -------------------------------------------------- */
-    .hx-display {{
-        font-family: var(--hx-display);
+    .hx-display, h1.hx-display {{
+        font-family: var(--hx-display) !important;
         font-size: clamp(2.6rem, 7vw, 4.4rem);
         line-height: 1.02;
         letter-spacing: -0.02em;
@@ -93,8 +101,8 @@ def _css() -> str:
         color: var(--hx-ash);
         max-width: 46ch;
     }}
-    .hx-h2 {{
-        font-family: var(--hx-display);
+    .hx-h2, h2.hx-h2 {{
+        font-family: var(--hx-display) !important;
         font-size: 1.9rem;
         letter-spacing: -0.01em;
         margin: 0 0 0.9rem 0;
@@ -127,7 +135,7 @@ def _css() -> str:
 
     /* ---- Stat block -------------------------------------------------- */
     .hx-stat-value {{
-        font-family: var(--hx-data);
+        font-family: var(--hx-data) !important;
         font-size: 2rem;
         color: var(--hx-bronze);
         line-height: 1.1;
