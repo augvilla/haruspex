@@ -2,7 +2,9 @@
 
 import streamlit as st
 
-from lib.components import body, eyebrow, footer, heading, rule, slot
+from lib.components import (
+    body, eyebrow, footer, heading, page_header, rule, section, slot,
+)
 
 # Edit this list and the page rebuilds itself. Order is the order shown.
 MEMBERS = [
@@ -14,11 +16,11 @@ MEMBERS = [
     {"name": "REPLACE ME", "role": "Operations", "bio": "One or two lines."},
 ]
 
-eyebrow("Team")
-st.markdown('<h1 class="hx-display">Who runs it</h1>', unsafe_allow_html=True)
-body(
+page_header(
+    "Team",
+    "Who runs it",
     "REPLACE ME — a line about how the team is structured and how someone "
-    "joins it. If you recruit on a cycle, say when."
+    "joins it. If you recruit on a cycle, say when.",
 )
 
 rule()

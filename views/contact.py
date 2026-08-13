@@ -2,13 +2,15 @@
 
 import streamlit as st
 
-from lib.components import body, eyebrow, footer, heading, panel, rule
+from lib.components import (
+    body, eyebrow, footer, heading, page_header, panel, rule, section,
+)
 
-eyebrow("Contact")
-st.markdown('<h1 class="hx-display">Get in touch</h1>', unsafe_allow_html=True)
-body(
+page_header(
+    "Contact",
+    "Get in touch",
     "REPLACE ME — who should write, and what to expect back. If you only "
-    "respond during recruiting season, say so here."
+    "respond during recruiting season, say so here.",
 )
 
 rule()

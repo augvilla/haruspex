@@ -1,49 +1,40 @@
-"""Home — the hero, the thesis, and three doors into the rest of the site."""
+"""Home — full-bleed hero, one statement, then the supporting sections."""
 
 import streamlit as st
 
 from lib.components import (
-    body,
     eyebrow,
     footer,
     heading,
+    hero,
     panel,
     rule,
+    section,
     slot,
     stat,
+    statement,
     templum,
 )
 
-# --- Hero -------------------------------------------------------------------
-left, right = st.columns([1.25, 1], gap="large", vertical_alignment="center")
+# --- Hero: full bleed, centered, nothing but the name and one line ----------
+hero(
+    name="Haruspex Capital Partners",
+    sub="REPLACE ME — one sentence on what the fund does. Say the strategy "
+        "plainly. This is the only line most visitors will read.",
+    cue="Northwestern University · Est. 2026",
+)
 
-with left:
-    eyebrow("Northwestern University · Est. 2026")
-    st.markdown(
-        '<h1 class="hx-display">Haruspex<br>Capital Partners</h1>',
-        unsafe_allow_html=True,
-    )
-    st.markdown(
-        '<p class="hx-lede">'
-        "REPLACE ME — one or two sentences on what the fund does and why it "
-        "exists. Say the strategy plainly. Resist the urge to write a mission "
-        "statement."
-        "</p>",
-        unsafe_allow_html=True,
-    )
+section()
 
-with right:
-    st.markdown(
-        f'<div style="display:flex;justify-content:center">'
-        f"{templum(size=300, filled=[1, 4, 6, 9, 11, 14])}</div>",
-        unsafe_allow_html=True,
-    )
-    st.markdown(
-        '<p class="hx-mono hx-muted" style="text-align:center;font-size:0.7rem;'
-        'letter-spacing:0.14em;margin-top:0.75rem">THE TEMPLUM · XVI REGIONS</p>',
-        unsafe_allow_html=True,
-    )
+# --- Statement: the single large paragraph ----------------------------------
+statement(
+    "<strong>We read structure, not surface.</strong> REPLACE ME — two or "
+    "three sentences on how the fund actually operates and what makes its "
+    "approach different from a stock-picking club. Write it as prose, not "
+    "bullets."
+)
 
+section()
 rule()
 
 # --- Numbers ----------------------------------------------------------------
@@ -63,6 +54,7 @@ st.caption(
     "have numbers worth showing."
 )
 
+section()
 rule()
 
 # --- Three doors ------------------------------------------------------------
@@ -87,9 +79,27 @@ with col3:
         "carefully, so make it specific.",
     )
 
+section()
 rule()
 
-# --- Banner slot ------------------------------------------------------------
+# --- The mark ---------------------------------------------------------------
+eyebrow("The mark")
+mark_l, mark_c, mark_r = st.columns([1, 1, 1])
+with mark_c:
+    st.markdown(
+        f'<div style="display:flex;justify-content:center">'
+        f"{templum(size=260, filled=[1, 4, 6, 9, 11, 14])}</div>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        '<p class="hx-mono hx-muted" style="text-align:center;font-size:0.7rem;'
+        'letter-spacing:0.14em;margin-top:0.9rem">THE TEMPLUM · XVI REGIONS</p>',
+        unsafe_allow_html=True,
+    )
+
+section()
+rule()
+
 eyebrow("Asset slot")
 slot("BANNER IMAGE — 1600 × 500 — assets/banner.png", height=220)
 

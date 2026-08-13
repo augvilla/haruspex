@@ -6,17 +6,19 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-from lib.components import body, eyebrow, footer, heading, rule, stat
+from lib.components import (
+    body, eyebrow, footer, heading, page_header, rule, section, stat,
+)
 from lib.theme import FONTS, PALETTE
 
 DATA = Path(__file__).resolve().parent.parent / "data" / "performance.csv"
 
-eyebrow("Performance")
-st.markdown('<h1 class="hx-display">The record</h1>', unsafe_allow_html=True)
-body(
+page_header(
+    "Performance",
+    "The record",
     "REPLACE ME — state the period covered, whether figures are net or gross "
     "of costs, and what the benchmark is and why you chose it. The numbers "
-    "below are illustrative placeholder data until you swap in your own."
+    "below are illustrative placeholder data until you swap in your own.",
 )
 
 rule()

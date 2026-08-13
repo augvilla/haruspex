@@ -5,17 +5,19 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-from lib.components import body, eyebrow, footer, heading, rule, templum
+from lib.components import (
+    body, eyebrow, footer, heading, page_header, rule, section, templum,
+)
 from lib.theme import PALETTE
 
 DATA = Path(__file__).resolve().parent.parent / "data" / "holdings.csv"
 
-eyebrow("Holdings")
-st.markdown('<h1 class="hx-display">The book</h1>', unsafe_allow_html=True)
-body(
+page_header(
+    "Holdings",
+    "The book",
     "REPLACE ME — one sentence on how to read this page, and how current the "
     "figures are. State the as-of date explicitly; a holdings page without one "
-    "is worse than no holdings page."
+    "is worse than no holdings page.",
 )
 
 rule()

@@ -79,7 +79,7 @@ def _css() -> str:
     /* Trim Streamlit's default chrome without hiding the menu entirely. */
     #MainMenu {{ visibility: hidden; }}
     footer {{ visibility: hidden; }}
-    .block-container {{ padding-top: 3rem; max-width: 1080px; }}
+    .block-container {{ padding-top: 0; max-width: 1100px; }}
 
     /* ---- Eyebrow: small caps section label -------------------------- */
     .hx-eyebrow {{
@@ -182,11 +182,88 @@ def _css() -> str:
     }}
     .hx-footer strong {{ color: var(--hx-bone); font-weight: 500; }}
 
-    /* ---- Sidebar ----------------------------------------------------- */
-    section[data-testid="stSidebar"] {{
-        background: var(--hx-panel);
-        border-right: 1px solid var(--hx-line);
+    /* ---- Top navigation ---------------------------------------------
+       Replaces the sidebar. A horizontal bar reads as a firm's website;
+       a left rail reads as a dashboard. */
+    header[data-testid="stHeader"] {{
+        background: var(--hx-ink) !important;
+        border-bottom: 1px solid var(--hx-line);
     }}
+    [data-testid="stNavSectionHeader"], [data-testid="stTopNav"] {{
+        background: transparent !important;
+    }}
+    [data-testid="stTopNav"] a, header[data-testid="stHeader"] a {{
+        font-family: var(--hx-body) !important;
+        font-size: 0.82rem !important;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--hx-ash) !important;
+    }}
+    [data-testid="stTopNav"] a:hover {{ color: var(--hx-bone) !important; }}
+
+    /* ---- Full-bleed band ---------------------------------------------
+       Breaks out of the centered content column to span the viewport. */
+    .hx-bleed {{
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        width: 100vw;
+    }}
+
+    /* ---- Hero ---------------------------------------------------------
+       One idea, centered, with a great deal of air around it. The air is
+       the point: it is what separates a firm's site from a dashboard. */
+    .hx-hero {{
+        padding: clamp(4.5rem, 15vh, 8.5rem) 1.5rem;
+        text-align: center;
+        border-top: 1px solid var(--hx-line);
+        border-bottom: 1px solid var(--hx-line);
+        background:
+            radial-gradient(ellipse at 50% 0%,
+                rgba(176,138,79,0.07), transparent 62%),
+            var(--hx-panel);
+    }}
+    .hx-hero-name {{
+        font-family: var(--hx-display) !important;
+        font-size: clamp(3rem, 8.5vw, 6.5rem);
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+        margin: 0;
+        color: var(--hx-bone);
+    }}
+    .hx-hero-sub {{
+        font-family: var(--hx-body);
+        font-size: clamp(1rem, 1.6vw, 1.3rem);
+        line-height: 1.5;
+        color: var(--hx-ash);
+        max-width: 44ch;
+        margin: 1.75rem auto 0 auto;
+    }}
+    .hx-hero-cue {{
+        font-family: var(--hx-data) !important;
+        font-size: 0.75rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--hx-bronze);
+        margin-top: 2.75rem;
+    }}
+
+    /* ---- Statement: the one large paragraph under the hero ----------- */
+    .hx-statement {{
+        font-size: clamp(1.15rem, 1.9vw, 1.45rem);
+        line-height: 1.6;
+        color: var(--hx-bone);
+        max-width: 58ch;
+        margin: 0;
+    }}
+    .hx-statement strong {{ font-weight: 600; color: var(--hx-bone); }}
+
+    /* ---- Page header used by every interior page --------------------- */
+    .hx-pagehead {{
+        padding: clamp(2.5rem, 7vh, 4.5rem) 0 0 0;
+    }}
+
+    /* ---- Section spacing --------------------------------------------- */
+    .hx-section {{ padding: clamp(3rem, 8vh, 5.5rem) 0 0 0; }}
 
     /* ---- Tables and inputs ------------------------------------------- */
     [data-testid="stDataFrame"] {{ font-family: var(--hx-data); }}

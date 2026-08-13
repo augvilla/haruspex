@@ -61,6 +61,46 @@ def slot(label: str, height: int = 180) -> None:
     )
 
 
+def section() -> None:
+    """Vertical breathing room between major blocks."""
+    st.markdown('<div class="hx-section"></div>', unsafe_allow_html=True)
+
+
+def hero(name: str, sub: str, cue: str = "") -> None:
+    """Full-bleed opening band: one idea, centered, surrounded by air.
+
+    This is the single element that most distinguishes a firm's site from a
+    dashboard, so it deliberately spans the full viewport and carries nothing
+    but the name and one sentence.
+    """
+    cue_html = f'<div class="hx-hero-cue">{cue}</div>' if cue else ""
+    st.markdown(
+        f'<div class="hx-bleed"><div class="hx-hero">'
+        f'<h1 class="hx-hero-name">{name}</h1>'
+        f'<p class="hx-hero-sub">{sub}</p>'
+        f"{cue_html}"
+        f"</div></div>",
+        unsafe_allow_html=True,
+    )
+
+
+def page_header(label: str, title: str, lede: str = "") -> None:
+    """Standard opening for every interior page: label, title, one paragraph."""
+    lede_html = f'<p class="hx-lede">{lede}</p>' if lede else ""
+    st.markdown(
+        f'<div class="hx-pagehead">'
+        f'<div class="hx-eyebrow">{label}</div>'
+        f'<h1 class="hx-display">{title}</h1>'
+        f"{lede_html}</div>",
+        unsafe_allow_html=True,
+    )
+
+
+def statement(text: str) -> None:
+    """The large paragraph that sits directly under the hero."""
+    st.markdown(f'<p class="hx-statement">{text}</p>', unsafe_allow_html=True)
+
+
 # ---------------------------------------------------------------------------
 # Signature: the templum
 # ---------------------------------------------------------------------------

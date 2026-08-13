@@ -2,17 +2,18 @@
 
 import streamlit as st
 
-from lib.components import body, eyebrow, footer, heading, panel, rule, slot
+from lib.components import (
+    body, eyebrow, footer, heading, page_header, panel, rule, section, slot,
+)
 
-eyebrow("About")
-st.markdown('<h1 class="hx-display">The name</h1>', unsafe_allow_html=True)
-
-body(
+page_header(
+    "About",
+    "The name",
     "A haruspex was the Etruscan and Roman priest who forecast by inspecting "
     "the internal structure of a thing rather than its surface. The field he "
     "read was divided into sixteen regions, each mapped to a division of the "
     "sky. REPLACE ME — say in one more sentence why that maps onto how you "
-    "actually invest, and then stop. Naming stories are best kept short."
+    "actually invest, and then stop. Naming stories are best kept short.",
 )
 
 rule()
