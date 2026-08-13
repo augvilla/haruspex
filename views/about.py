@@ -3,7 +3,7 @@
 import streamlit as st
 
 from lib.components import (
-    body, eyebrow, footer, heading, page_header, panel, rule, section, slot,
+    body, eyebrow, footer, heading, page_header, panel, rule, section,
 )
 
 page_header(
@@ -49,7 +49,9 @@ body(
 
 rule()
 
-eyebrow("Asset slot")
-slot("TEAM OR CAMPUS PHOTO — 1200 × 600 — assets/about.jpg", height=200)
+eyebrow("The haruspex")
+img_l, img_c, img_r = st.columns([1, 2, 1])
+with img_c:
+    st.image("assets/haruspex.png")
 
 footer()
