@@ -41,8 +41,6 @@ FONT_IMPORT = (
 def _css() -> str:
     p, f = PALETTE, FONTS
     return f"""
-    @import url('{FONT_IMPORT}');
-
     :root {{
         --hx-ink: {p["ink"]};
         --hx-panel: {p["panel"]};
@@ -203,5 +201,16 @@ def _css() -> str:
 
 
 def apply_theme() -> None:
-    """Inject the stylesheet. Call once at the top of every page."""
+    """Inject the stylesheet. Call once at the top of every page.
+
+    The font is loaded via a <link> tag rather than an @import inside the
+    stylesheet: Streamlit Cloud strips @import from injected <style> blocks,
+    which silently drops the display face back to a system sans.
+    """
+    st.markdown(
+        '<link rel="preconnect" href="https://fonts.googleapis.com">'
+        '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+        f'<link href="{FONT_IMPORT}" rel="stylesheet">',
+        unsafe_allow_html=True,
+    )
     st.markdown(f"<style>{_css()}</style>", unsafe_allow_html=True)
