@@ -317,6 +317,26 @@ def _css() -> str:
         color: inherit !important;
     }}
 
+    /* Streamlit's paragraph rule out-specifies a bare class, which kills the
+       auto side-margins that centre the hero sentence. Force them back. */
+    .stApp .hx-hero .hx-hero-sub,
+    .stApp .hx-hero p.hx-hero-sub,
+    .stApp [data-testid="stMarkdownContainer"] .hx-hero-sub,
+    .stApp [data-testid="stMarkdownContainer"] p.hx-hero-sub {{
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 1.75rem !important;
+        text-align: center !important;
+        max-width: 44ch !important;
+    }}
+
+    .stApp .hx-hero .hx-hero-cue,
+    .stApp [data-testid="stMarkdownContainer"] .hx-hero-cue {{
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }}
+
     .stApp .hx-eyebrow, .stApp .hx-mono, .stApp .hx-stat-value,
     .stApp .hx-stat-label, .stApp .hx-slot,
     .stApp [data-testid="stMarkdownContainer"] .hx-eyebrow,
