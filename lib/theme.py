@@ -57,10 +57,14 @@ def _css() -> str:
 
     .stApp {{ background: var(--hx-ink); }}
 
-    html, body, [class*="css"], .stMarkdown, p, li, span, div {{
+    /* Deliberately does NOT include span or div: Streamlit wraps heading
+       text in an anchor <span>, and a bare span rule here would override the
+       heading's display face from the inside. */
+    html, body, .stMarkdown, p, li {{
         font-family: var(--hx-body);
         color: var(--hx-bone);
     }}
+    .stApp {{ color: var(--hx-bone); }}
 
     /* Streamlit's own heading rules out-specify a bare class selector, so
        these need !important or the display face silently reverts to sans. */
@@ -204,6 +208,43 @@ def _css() -> str:
     }}
     @media (max-width: 640px) {{
         .block-container {{ padding-top: 1.5rem; }}
+    }}
+
+    /* ---- Font override of last resort --------------------------------
+       Streamlit ships its own heading styles that beat a plain class
+       selector. These use a long selector chain, the literal font stack
+       rather than a custom property, and sit last in the sheet so they win
+       the cascade outright. If headings ever revert to sans, this is the
+       block to check first. */
+    .stApp h1, .stApp h2, .stApp h3,
+    .stApp .hx-display, .stApp h1.hx-display,
+    .stApp .hx-h2, .stApp h2.hx-h2,
+    .stApp [data-testid="stMarkdownContainer"] h1,
+    .stApp [data-testid="stMarkdownContainer"] h2,
+    .stApp [data-testid="stMarkdownContainer"] h3,
+    .stApp [data-testid="stMarkdownContainer"] h1.hx-display,
+    .stApp [data-testid="stMarkdownContainer"] h2.hx-h2,
+    .stApp [data-testid="stMarkdownContainer"] .hx-display,
+    .stApp [data-testid="stMarkdownContainer"] .hx-h2 {{
+        font-family: 'Fraunces', Georgia, 'Times New Roman', serif !important;
+    }}
+
+    /* Streamlit puts an anchor <span> inside every heading. Force it to
+       inherit rather than pick up a font of its own. */
+    .stApp h1 span, .stApp h2 span, .stApp h3 span,
+    .stApp .hx-display span, .stApp .hx-h2 span,
+    .stApp [data-testid="stMarkdownContainer"] h1 span,
+    .stApp [data-testid="stMarkdownContainer"] h2 span {{
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        color: inherit !important;
+    }}
+
+    .stApp .hx-eyebrow, .stApp .hx-mono, .stApp .hx-stat-value,
+    .stApp .hx-stat-label, .stApp .hx-slot,
+    .stApp [data-testid="stMarkdownContainer"] .hx-eyebrow,
+    .stApp [data-testid="stMarkdownContainer"] .hx-stat-value {{
+        font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
     }}
     """
 
