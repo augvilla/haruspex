@@ -8,7 +8,7 @@ from lib.components import (
 
 # Edit this list and the page rebuilds itself. Order is the order shown.
 MEMBERS = [
-    {"name": "REPLACE ME", "role": "Managing Partner", "bio": "One or two lines. Class year, concentration, what they cover."},
+    {"name": "Augustine Villalobos", "role": "Founder & Senior Manager", "bio": "Northwestern University '28."},
     {"name": "REPLACE ME", "role": "Chief Investment Officer", "bio": "One or two lines."},
     {"name": "REPLACE ME", "role": "Risk", "bio": "One or two lines."},
     {"name": "REPLACE ME", "role": "Research", "bio": "One or two lines."},
@@ -16,9 +16,10 @@ MEMBERS = [
     {"name": "REPLACE ME", "role": "Operations", "bio": "One or two lines."},
 ]
 
-page_header(
-    "Team",
-    "Who runs it",
+section()
+
+eyebrow("Team")
+body(
     "REPLACE ME — a line about how the team is structured and how someone "
     "joins it. If you recruit on a cycle, say when.",
 )
@@ -45,8 +46,7 @@ for start in range(0, len(MEMBERS), COLUMNS):
 
 rule()
 
-eyebrow("Joining")
-heading("How to get involved")
+eyebrow("Involvement")
 body(
     "REPLACE ME — the application process, the time commitment, and what you "
     "expect from a new member in their first quarter. Be concrete about the "
