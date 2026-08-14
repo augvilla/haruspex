@@ -6,6 +6,8 @@ from lib.components import (
     body, eyebrow, footer, heading, page_header, panel, rule, section,
 )
 
+section()
+
 eyebrow("About")
 body(
     "A haruspex was a Roman priest who read the future in the entrails of "
