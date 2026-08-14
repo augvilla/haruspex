@@ -98,7 +98,7 @@ with s4:
     sleeve(
         "Digital assets",
         "A broad index of the major chains, held on a cycle view rather than as a trade, with eligible assets staked.",
-        "Bitcoin · Etherium · XRP · Solana",
+        "Bitcoin · Ethereum · XRP · Solana",
     )
 
 
