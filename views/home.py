@@ -37,7 +37,6 @@ with c3:
 with c4:
     stat("Aug 2026", "Inception")
 
-section()
 rule()
 
 # --- Strategy ---------------------------------------------------------------
