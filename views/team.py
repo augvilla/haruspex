@@ -19,10 +19,6 @@ MEMBERS = [
 section()
 
 eyebrow("Team")
-body(
-    "REPLACE ME — a line about how the team is structured and how someone "
-    "joins it. If you recruit on a cycle, say when.",
-)
 
 rule()
 
