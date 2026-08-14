@@ -48,15 +48,10 @@ col1, col2, col3 = st.columns(3, gap="medium")
 with col1:
     panel(
         "Allocation",
-        "We buy the chokepoints and the future of the AI build-out: "
-        "computing, optics, power, as "
-        "well as  robotics and space "
-        "infrastructure without which "
-        "none of it runs. We also hold "
-        "crypto, which has topped out of "
-        "a strong four year cycle, in "
-        "addition to a stake in "
-        "Anthropic.",
+        "We invest in the chokepoints of the AI build-out — compute, "
+        "optics and power — and in the robotics and space infrastructure "
+        "built upon them. We also hold crypto, which has topped out of a "
+        "strong four-year cycle, plus pre-IPO Anthropic SPV exposure."
     )
 with col2:
     panel(
