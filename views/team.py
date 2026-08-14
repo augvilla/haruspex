@@ -42,11 +42,4 @@ for start in range(0, len(MEMBERS), COLUMNS):
 
 rule()
 
-eyebrow("Involvement")
-body(
-    "REPLACE ME — the application process, the time commitment, and what you "
-    "expect from a new member in their first quarter. Be concrete about the "
-    "workload; it filters better than any application question."
-)
-
 footer()
