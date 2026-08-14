@@ -52,7 +52,6 @@ def send(cfg: dict, name: str, sender: str, reason: str, message: str) -> None:
 
 section()
 eyebrow("Contact")
-heading("Get in touch")
 para(
     "Write if you want to join the fund, ask about a position, or challenge "
     "something on this site. One person reads this inbox, so replies are not "
@@ -94,7 +93,6 @@ if submitted:
 rule()
 
 eyebrow("Note")
-heading("Before you write about money")
 para(
     "The fund pools contributions from its own members and does not take "
     "capital from anyone outside that group. If that ever changes, it will "
