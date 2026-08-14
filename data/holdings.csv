@@ -1,5 +1,5 @@
 sleeve,ticker,name,weight,thesis
-Quantum Computing,QPUX,Defiance 2X Daily Long Pure Quantum ETF,0.20,Leveraged basket exposure to the four listed quantum hardware names; held as a written-off position sized to go to zero.
-Digital Assets,BITW,Bitwise 10 Crypto Index ETF,0.20,Broad index of the largest crypto assets held on a four-year cycle view rather than as a trade; bought after the October 2025 top.
-Physical Infrastructure,ELOL,Leverage Shares 100% TSLA & 100% SPCX Daily ETF,0.20,Two hundred percent notional across Tesla and SpaceX in one line; daily reset means this is a short-hold position with a fixed exit date.
-Cash,CASH,Undeployed,0.40,Dry powder held between entries.
+Quantum Computing,QPUX,Defiance 2X Daily Long Pure Quantum ETF,0.20,Leveraged bet on listed quantum hardware. Sized to go to zero.
+Digital Assets,BITW,Bitwise 10 Crypto Index ETF,0.20,Broad crypto index held on a cycle view.
+Physical Infrastructure,ELOL,Leverage Shares 100% TSLA & 100% SPCX Daily ETF,0.20,Tesla and SpaceX at 200% notional. Short hold, daily reset.
+Cash,DXY,Undeployed,0.40,Dry powder held between entries.
