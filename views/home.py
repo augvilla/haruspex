@@ -48,8 +48,7 @@ col1, col2, col3 = st.columns(3, gap="medium")
 with col1:
     panel(
         "Allocation",
-        "We buy the chokepoints and the "
-        "future of the AI build-out: "
+        "We buy the chokepoints and the future of the AI build-out: "
         "computing, optics, power, as "
         "well as  robotics and space "
         "infrastructure without which "
