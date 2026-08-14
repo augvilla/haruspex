@@ -32,9 +32,9 @@ with c1:
 with c2:
     stat("3+", "Positions held")
 with c3:
-    stat("1+", "Members")
-with c4:
     stat("Aug 2026", "Inception")
+with c4:
+    stat("1+", "Managers")
 
 rule()
 
