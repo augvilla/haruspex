@@ -43,29 +43,32 @@ rule()
 
 # --- Three doors ------------------------------------------------------------
 eyebrow("What we do")
-heading("What we own, how we size it, and when we sell")
+heading("How we run the fund")
 
 col1, col2, col3 = st.columns(3, gap="medium")
 with col1:
     panel(
-        "What we own",
-        "Four things: quantum computing, Tesla and SpaceX, crypto, and the "
-        "physical guts of AI — the chips, optics and power that data centers "
-        "run on. We hold crypto because we think it is the next form of money.",
+        "The screen",
+        "We buy the chokepoints of the AI build-out: the chips, optics and "
+        "power stations without which none of it runs. We also hold crypto, "
+        "which topped out in October 2025 and has been grinding sideways "
+        "against a supply that keeps shrinking.",
     )
 with col2:
     panel(
-        "How we size it",
-        "No fixed weights. We manage it actively. The largest positions are in "
-        "quantum, Musk's companies and crypto, with the rest spread across AI "
-        "infrastructure and cash. All of it falls together in a bad week.",
+        "The sizing",
+        "No fixed weights — the book is managed actively. The weight sits in "
+        "quantum computing, Musk's two companies and crypto, with the "
+        "remainder in AI infrastructure and cash. These are one bet wearing "
+        "four hats, and we size them accordingly.",
     )
 with col3:
     panel(
-        "When we sell",
-        "This is a high-risk fund and we will not pretend otherwise. Rome was "
-        "not built by people who wanted their money back. We sell when the "
-        "reason we bought stops being true, not because one week went badly.",
+        "The exit",
+        "Let us be direct: this is a high-risk book and we are not trying to "
+        "match an index. Rome was not built by people who wanted their money "
+        "back. We sell when the reason we bought stops being true, not because "
+        "a week went badly, and not because it feels uncomfortable.",
     )
 
 section()

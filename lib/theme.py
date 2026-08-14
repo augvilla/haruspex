@@ -272,13 +272,14 @@ def _css() -> str:
         margin: 2.25rem auto 0 auto;
     }}
     .hx-hero-attrib {{
-        font-family: var(--hx-body);
+        /* Matches the epigraph exactly — same face, size and colour. Only
+           the slope differs. */
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
         font-style: normal;
-        font-size: 0.82em;
-        letter-spacing: 0.04em;
-        color: var(--hx-ash);
         white-space: nowrap;
-        margin-left: 0.5em;
+        margin-left: 0.4em;
     }}
     .hx-hero-cue {{
         font-family: var(--hx-data) !important;
@@ -373,7 +374,9 @@ def _css() -> str:
     .stApp .hx-hero .hx-hero-attrib,
     .stApp [data-testid="stMarkdownContainer"] .hx-hero-attrib {{
         font-style: normal !important;
-        font-family: var(--hx-body) !important;
+        font-family: inherit !important;
+        font-size: inherit !important;
+        color: inherit !important;
     }}
 
     .stApp .hx-hero .hx-hero-cue,
