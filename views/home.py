@@ -48,10 +48,12 @@ col1, col2, col3 = st.columns(3, gap="medium")
 with col1:
     panel(
         "Allocation",
-        "We buy the chokepoints of the AI build-out: the chips, optics and "
-        "power stations without which none of it runs. We also hold crypto, "
-        "which topped out in October 2025 and has been grinding sideways "
-        "against a supply that keeps shrinking.",
+        "We buy the chokepoints and the future of the AI"
+        "build-out: the chips, optics, power stations,"
+        "as well as robotics and space infrastructure"
+        "without which none of it runs. We also hold"
+        "crypto, which has topped out of its four year"
+        "cycle, in additino to a stake in Anthropic.",
     )
 with col2:
     panel(
