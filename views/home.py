@@ -104,7 +104,7 @@ with s4:
         "Digital assets",
         "A broad crypto index alongside staked positions, held on a cycle "
         "view rather than a trade.",
-        "Bitcoin · Etherium · Solana · XRP · Cardano · Cosmos",
+        "Bitcoin · Etherium · Solana · Cardano · Cosmos",
     )
 
 section()
