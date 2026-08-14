@@ -86,7 +86,7 @@ with s2:
         "AI Infrastructure",
         "The compute, optics and power the build-out runs on — the parts "
         "nothing else works without.",
-        "NVDA · ALAB · COHR · VRT · LAZR · MGK",
+        "NVIDIA · Astera Labs · Coherent · Lumentum",
     )
 
 st.write("")
@@ -97,7 +97,7 @@ with s3:
         "Physical Infrastructure",
         "Tesla and SpaceX in a single position, covering the two ends of the "
         "same automation thesis.",
-        "ELOL",
+        "SpaceX · Tesla · Vertiv · Quanta Services",
     )
 with s4:
     sleeve(
