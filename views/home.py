@@ -24,8 +24,6 @@ hero(
 
 section()
 section()
-section()
-rule()
 
 # --- Numbers ----------------------------------------------------------------
 eyebrow("At a glance")
