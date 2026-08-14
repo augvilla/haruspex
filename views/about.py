@@ -19,13 +19,14 @@ page_header(
 rule()
 
 eyebrow("Mandate")
-heading("What this fund is allowed to do")
 body(
-    "REPLACE ME — state the mandate as a set of rules rather than an "
-    "aspiration. What can the fund hold? What is the maximum position size? "
-    "What leverage is permitted? What is explicitly out of bounds? A written "
-    "mandate is the single most useful document a student fund can produce, "
-    "because it is what stops a good week from becoming a policy."
+    "The fund may hold listed equities, exchange-traded funds including "
+    "leveraged and single-stock structures, and digital assets held directly "
+    "or through an index vehicle. It may not use options, futures, or margin "
+    "borrowed against the account: leverage enters the book only through the "
+    "internal structure of a fund, never through the brokerage. Every position "
+    "is entered with a written reason on file, and exits when that reason stops "
+    "being true."
 )
 
 c1, c2, c3 = st.columns(3, gap="medium")
