@@ -13,15 +13,9 @@ from lib.theme import FONTS, PALETTE
 
 DATA = Path(__file__).resolve().parent.parent / "data" / "performance.csv"
 
-page_header(
-    "Performance",
-    "The record",
-    "REPLACE ME — state the period covered, whether figures are net or gross "
-    "of costs, and what the benchmark is and why you chose it. The numbers "
-    "below are illustrative placeholder data until you swap in your own.",
-)
+section()
 
-rule()
+eyebrow("Performance")
 
 try:
     perf = pd.read_csv(DATA, parse_dates=["date"])
