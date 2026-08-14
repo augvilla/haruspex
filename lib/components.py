@@ -41,6 +41,20 @@ def panel(title: str, text: str) -> None:
     )
 
 
+def sleeve(name: str, line: str, tickers: str) -> None:
+    """One exposure sleeve: what it is, why, and the actual tickers.
+
+    Tickers are set in the mono face and bronze so the eye can scan them
+    without reading the prose — this block exists to answer "what specifically"
+    at the moment the question forms.
+    """
+    st.markdown(
+        f'<div class="hx-panel"><h4>{name}</h4><p>{line}</p>'
+        f'<div class="hx-tickers">{tickers}</div></div>',
+        unsafe_allow_html=True,
+    )
+
+
 def stat(value: str, label: str) -> None:
     """A single number with its label. Numbers are always monospace."""
     st.markdown(

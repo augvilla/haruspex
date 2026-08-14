@@ -168,6 +168,17 @@ def _css() -> str:
     }}
     .hx-panel p {{ color: var(--hx-ash); font-size: 0.94rem; line-height: 1.6; margin: 0; }}
 
+    /* ---- Ticker line inside a sleeve block --------------------------- */
+    .hx-tickers {{
+        font-family: var(--hx-data) !important;
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        color: var(--hx-bronze);
+        margin-top: 1rem;
+        padding-top: 0.9rem;
+        border-top: 1px solid var(--hx-line);
+    }}
+
     /* ---- Stat block -------------------------------------------------- */
     .hx-stat-value {{
         font-family: var(--hx-data) !important;

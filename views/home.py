@@ -9,9 +9,8 @@ from lib.components import (
     panel,
     rule,
     section,
-    slot,
+    sleeve,
     stat,
-    templum,
 )
 
 # --- Hero: full bleed, centered, nothing but the name and the epigraph ------
@@ -23,7 +22,7 @@ hero(
 )
 
 section()
-section()
+rule()
 
 # --- Numbers ----------------------------------------------------------------
 eyebrow("At a glance")
@@ -37,6 +36,7 @@ with c3:
 with c4:
     stat("Aug 2026", "Inception")
 
+section()
 rule()
 
 # --- Strategy ---------------------------------------------------------------
@@ -68,26 +68,45 @@ with col3:
         "because a position feels uncomfortable.",
     )
 
+section()
 rule()
 
-# --- The mark ---------------------------------------------------------------
-eyebrow("The mark")
-mark_l, mark_c, mark_r = st.columns([1, 1, 1])
-with mark_c:
-    st.markdown(
-        f'<div style="display:flex;justify-content:center">'
-        f"{templum(size=260, filled=[1, 4, 6, 9, 11, 14])}</div>",
-        unsafe_allow_html=True,
+# --- Sleeves ----------------------------------------------------------------
+eyebrow("The book")
+s1, s2 = st.columns(2, gap="medium")
+with s1:
+    sleeve(
+        "Quantum computing",
+        "Pure-play quantum hardware, held through a leveraged fund and sized "
+        "as a position that can go to zero.",
+        "QPUX",
     )
-    st.markdown(
-        '<p class="hx-mono hx-muted" style="text-align:center;font-size:0.7rem;'
-        'letter-spacing:0.14em;margin-top:0.9rem">THE TEMPLUM · XVI REGIONS</p>',
-        unsafe_allow_html=True,
+with s2:
+    sleeve(
+        "AI infrastructure",
+        "The compute, optics and power the build-out runs on — the parts "
+        "nothing else works without.",
+        "NVDA · ALAB · COHR · VRT · LAZR · MGK",
     )
 
-rule()
+st.write("")
 
-eyebrow("Asset slot")
-slot("BANNER IMAGE — 1600 × 500 — assets/banner.png", height=220)
+s3, s4 = st.columns(2, gap="medium")
+with s3:
+    sleeve(
+        "Robotics and space",
+        "Tesla and SpaceX in a single position, covering the two ends of the "
+        "same automation thesis.",
+        "ELOL",
+    )
+with s4:
+    sleeve(
+        "Digital assets",
+        "A broad crypto index alongside a staked position, held on a cycle "
+        "view rather than a trade.",
+        "NCIQ · ATOM",
+    )
+
+section()
 
 footer()
