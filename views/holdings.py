@@ -75,8 +75,7 @@ st.bar_chart(
 rule()
 
 # --- Positions --------------------------------------------------------------
-eyebrow("By position")
-heading("Every line, with the reason it is there")
+eyebrow("Positions")
 display = holdings.assign(weight=holdings["weight"] * 100)
 st.dataframe(
     display,
