@@ -5,7 +5,6 @@ import streamlit as st
 from lib.components import (
     eyebrow,
     footer,
-    heading,
     hero,
     panel,
     rule,
@@ -24,6 +23,7 @@ hero(
 )
 
 section()
+rule()
 
 # --- Numbers ----------------------------------------------------------------
 eyebrow("At a glance")
@@ -38,8 +38,9 @@ with c4:
     stat("Aug 2026", "Inception")
 
 section()
+rule()
 
-# --- Three doors ------------------------------------------------------------
+# --- Strategy ---------------------------------------------------------------
 eyebrow("Strategy")
 
 col1, col2, col3 = st.columns(3, gap="medium")
@@ -49,7 +50,7 @@ with col1:
         "We invest in the chokepoints of the AI build-out — compute, "
         "optics and power — and in the robotics and space infrastructure "
         "built upon them. We also hold crypto, which has topped out of a "
-        "strong four-year cycle, plus pre-IPO Anthropic SPV exposure."
+        "strong four-year cycle, plus pre-IPO Anthropic SPV exposure.",
     )
 with col2:
     panel(
@@ -62,13 +63,14 @@ with col2:
 with col3:
     panel(
         "Duration",
-        "This is a high-risk portfolio. Rome "
-        "grew by strategic planning and rapid execution, and so does this "
-        "fund. We look constantly to the future, and we do not sell merely "
-        "because a week went badly or because a position feels uncomfortable.",
+        "This is a high-risk portfolio. Rome grew by strategic planning and "
+        "rapid execution, and so does this fund. We look constantly to the "
+        "future, and we do not sell merely because a week went badly or "
+        "because a position feels uncomfortable.",
     )
 
 section()
+rule()
 
 # --- The mark ---------------------------------------------------------------
 eyebrow("The mark")
@@ -86,6 +88,7 @@ with mark_c:
     )
 
 section()
+rule()
 
 eyebrow("Asset slot")
 slot("BANNER IMAGE — 1600 × 500 — assets/banner.png", height=220)
