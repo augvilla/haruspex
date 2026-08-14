@@ -56,10 +56,10 @@ with col1:
 with col2:
     panel(
         "Management",
-        "No fixed weights — the book is managed actively. The weight sits in "
-        "quantum computing, Musk's two companies and crypto, with the "
-        "remainder in AI infrastructure and cash. These are one bet wearing "
-        "four hats, and we size them accordingly.",
+        "We are an actively managed fund. Capital is mainly allocated to "
+        "crypto assets, quantum computing, robotics and space technology, "
+        "and AI infrastructure, with any remainder staked in altcoins. "
+        "This portfolio is intention built upon calculated risk.",
     )
 with col3:
     panel(
