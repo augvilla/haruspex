@@ -29,8 +29,10 @@ def heading(text: str) -> None:
     st.markdown(f'<h2 class="hx-h2">{text}</h2>', unsafe_allow_html=True)
 
 
-def body(text: str) -> None:
-    st.markdown(f'<p class="hx-body">{text}</p>', unsafe_allow_html=True)
+def body(text: str, center: bool = False) -> None:
+    """Body paragraph. Pass center=True to centre the text and the block."""
+    cls = "hx-body-center" if center else "hx-body"
+    st.markdown(f'<p class="{cls}">{text}</p>', unsafe_allow_html=True)
 
 
 def panel(title: str, text: str) -> None:

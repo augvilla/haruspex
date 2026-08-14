@@ -114,6 +114,16 @@ def _css() -> str:
         margin: 0 0 0.9rem 0;
     }}
     .hx-body {{ line-height: 1.7; color: var(--hx-bone); max-width: 62ch; }}
+    /* Opt-in centring, used on About. Applied per call rather than globally so
+       the Holdings and Performance intros stay left-aligned. */
+    .hx-body-center {{
+        line-height: 1.7;
+        color: var(--hx-bone);
+        max-width: 62ch;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }}
     .hx-muted {{ color: var(--hx-ash); }}
     .hx-mono {{ font-family: var(--hx-data); }}
 
@@ -395,6 +405,14 @@ def _css() -> str:
         text-align: center !important;
         margin-left: auto !important;
         margin-right: auto !important;
+    }}
+
+    .stApp .hx-body-center,
+    .stApp [data-testid="stMarkdownContainer"] .hx-body-center,
+    .stApp [data-testid="stMarkdownContainer"] p.hx-body-center {{
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
     }}
 
     .stApp .hx-eyebrow, .stApp .hx-mono, .stApp .hx-stat-value,
