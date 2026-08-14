@@ -24,7 +24,6 @@ hero(
 )
 
 section()
-rule()
 
 # --- Numbers ----------------------------------------------------------------
 eyebrow("At a glance")
@@ -39,7 +38,6 @@ with c4:
     stat("Aug 2026", "Inception")
 
 section()
-rule()
 
 # --- Three doors ------------------------------------------------------------
 eyebrow("Strategy")
@@ -71,7 +69,6 @@ with col3:
     )
 
 section()
-rule()
 
 # --- The mark ---------------------------------------------------------------
 eyebrow("The mark")
@@ -89,7 +86,6 @@ with mark_c:
     )
 
 section()
-rule()
 
 eyebrow("Asset slot")
 slot("BANNER IMAGE — 1600 × 500 — assets/banner.png", height=220)
