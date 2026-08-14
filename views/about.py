@@ -1,28 +1,30 @@
 """About — the name, the mandate, the constraints.
 
-The centred paragraphs are written inline rather than through a shared helper
-so this page cannot break if lib/ is a different version. Inline !important
-beats Streamlit's own paragraph rules.
+Paragraphs are written inline rather than through a shared helper so this page
+cannot break if lib/ is a different version. Inline !important beats
+Streamlit's own paragraph rules, including its default max-width.
 """
 
 import streamlit as st
 
 from lib.components import eyebrow, footer, panel, rule, section
 
-CENTERED = (
-    "line-height:1.7; max-width:62ch; margin:0 auto !important;"
-    "text-align:center !important; color:var(--hx-bone);"
+# No max-width: the paragraph runs the full width of the content column, so
+# its edges line up with the section rules above and below it.
+FULL = (
+    "line-height:1.7; max-width:none !important; width:100% !important;"
+    "margin:0 !important; text-align:left !important; color:var(--hx-bone);"
 )
 
 
-def centered(text: str) -> None:
-    """A body paragraph, centred, with no dependency on lib/components."""
-    st.markdown(f'<p style="{CENTERED}">{text}</p>', unsafe_allow_html=True)
+def para(text: str) -> None:
+    """A body paragraph spanning the full content column."""
+    st.markdown(f'<p style="{FULL}">{text}</p>', unsafe_allow_html=True)
 
 
 section()
 eyebrow("About")
-centered(
+para(
     "A haruspex was a Roman priest who read the future in the entrails of "
     "sacrificed animals — the liver above all, examined region by region for "
     "the will of the gods. We take the name for the method, not the "
@@ -34,7 +36,7 @@ centered(
 rule()
 
 eyebrow("Mandate")
-centered(
+para(
     "The fund may hold listed equities, exchange-traded funds including "
     "leveraged and single-stock structures, and digital assets held directly "
     "or through an index vehicle. It may not use options, futures, or margin "
@@ -68,7 +70,7 @@ with c3:
 rule()
 
 eyebrow("Process")
-centered(
+para(
     "Every position begins as a written note: what the business does, why it "
     "is hard to replace, what would have to be true for the thesis to fail, "
     "and what the fund is prepared to lose. The note is written before the "
