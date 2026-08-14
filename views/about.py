@@ -50,9 +50,9 @@ c1, c2, c3 = st.columns(3, gap="medium")
 with c1:
     panel(
         "Universe",
-        "Listed equities, exchange-traded funds including leveraged and "
-        "single-stock structures, and digital assets. No options, no futures, "
-        "no margin.",
+        "Listed equities, ETFS including leveraged and "
+        "single-stock structures, and digital assets. No options, futures, "
+        "or margins.",
     )
 with c2:
     panel(
