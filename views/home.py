@@ -77,15 +77,13 @@ s1, s2 = st.columns(2, gap="medium")
 with s1:
     sleeve(
         "Quantum Computing",
-        "Pure-play exposure into quantum computing and machine learning, "
-        "held through leverages and swaps.",
-        "IONQ · RGTI · QBTS · QUBT",
+        "Pure-play exposure to quantum hardware, held through a leveraged fund that takes its position via swaps.",
+        "IONQ · Rigetti · D-Wave · Quantum Computing",
     )
 with s2:
     sleeve(
         "AI Infrastructure",
-        "The compute, optics and power the build-out runs on — the parts "
-        "nothing else works without.",
+        "The compute, interconnect and optics the build-out runs on — the parts nothing else works without.",
         "NVIDIA · Astera Labs · Coherent · Lumentum",
     )
 
@@ -95,15 +93,13 @@ s3, s4 = st.columns(2, gap="medium")
 with s3:
     sleeve(
         "Physical Infrastructure",
-        "Tesla and SpaceX in a single position, covering the two ends of the "
-        "same automation thesis.",
+        "The hardware layer beneath it all: launch, vehicles, data centre power and the crews who build the grid.",
         "SpaceX · Tesla · Vertiv · Quanta Services",
     )
 with s4:
     sleeve(
         "Digital assets",
-        "A broad crypto index alongside staked positions, held on a cycle "
-        "view rather than a trade.",
+        "A broad index of the major chains, held on a cycle view rather than as a trade, with eligible assets staked.",
         "Bitcoin · Etherium · XRP · Solana",
     )
 
