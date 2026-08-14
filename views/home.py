@@ -43,37 +43,29 @@ rule()
 
 # --- Three doors ------------------------------------------------------------
 eyebrow("What we do")
-heading("Read the structure, then take the position")
+heading("What we own, how we size it, and when we sell")
 
 col1, col2, col3 = st.columns(3, gap="medium")
 with col1:
     panel(
-        "The screen",
-        "We look for chokepoints — companies whose product is hard to "
-        "substitute anywhere in the AI compute stack, from interconnect and "
-        "optics to the power feeding the racks. We also hold digital assets on "
-        "conviction: crypto peaked in October 2025 and has consolidated since "
-        "against a fixed and shrinking issuance schedule. We think it re-rates "
-        "from here, and that this is what currency looks like next.",
+        "What we own",
+        "Four things: quantum computing, Tesla and SpaceX, crypto, and the "
+        "physical guts of AI — the chips, optics and power that data centers "
+        "run on. We hold crypto because we think it is the next form of money.",
     )
 with col2:
     panel(
-        "The sizing",
-        "The book is actively managed rather than run to fixed weights. "
-        "Exposure concentrates in quantum computing, AI infrastructure and the "
-        "power that feeds it, and digital assets. These sectors are correlated "
-        "and we size them knowing it. Leveraged instruments are sized as though "
-        "the position could go to zero, because the daily-reset structure means "
-        "it can.",
+        "How we size it",
+        "No fixed weights. We manage it actively. The largest positions are in "
+        "quantum, Musk's companies and crypto, with the rest spread across AI "
+        "infrastructure and cash. All of it falls together in a bad week.",
     )
 with col3:
     panel(
-        "The exit",
-        "Let's be direct: this is a high-risk book. Leveraged instruments, "
-        "frontier sectors, and assets that didn't exist twenty years ago. We "
-        "are not trying to match an index. Rome wasn't built by people who "
-        "wanted their money back. We sell when the reason we bought stops "
-        "being true — not because one week went badly.",
+        "When we sell",
+        "This is a high-risk fund and we will not pretend otherwise. Rome was "
+        "not built by people who wanted their money back. We sell when the "
+        "reason we bought stops being true, not because one week went badly.",
     )
 
 section()

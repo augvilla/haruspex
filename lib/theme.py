@@ -144,6 +144,11 @@ def _css() -> str:
     [data-testid="stColumn"]:has(.hx-panel) [data-testid="stMarkdown"],
     [data-testid="stColumn"]:has(.hx-panel) [data-testid="stMarkdownContainer"] {{
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+    }}
+    [data-testid="stColumn"]:has(.hx-panel) .hx-panel {{
         flex: 1 1 auto;
     }}
 
