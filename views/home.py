@@ -23,6 +23,8 @@ hero(
 )
 
 section()
+section()
+section()
 rule()
 
 # --- Numbers ----------------------------------------------------------------
@@ -68,7 +70,6 @@ with col3:
         "because a position feels uncomfortable.",
     )
 
-section()
 rule()
 
 # --- The mark ---------------------------------------------------------------
@@ -86,7 +87,6 @@ with mark_c:
         unsafe_allow_html=True,
     )
 
-section()
 rule()
 
 eyebrow("Asset slot")
