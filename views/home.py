@@ -64,10 +64,10 @@ with col2:
 with col3:
     panel(
         "Duration",
-        "Let us be direct: this is a high-risk book and we are not trying to "
-        "match an index. Rome was not built by people who wanted their money "
-        "back. We sell when the reason we bought stops being true, not because "
-        "a week went badly, and not because it feels uncomfortable.",
+        "This is a high-risk book and we are not trying to match an index. "
+        "Rome was not won by patience; it was won by strategic planning and "
+        "rapid execution. We sell when the reason we bought stops being true, "
+        "not because a week went badly or a position feels uncomfortable.",
     )
 
 section()
