@@ -90,8 +90,7 @@ st.dataframe(
     },
 )
 st.caption(
-    "Edit data/holdings.csv to change this table. Nothing here is hardcoded "
-    "in the page."
+    "Holdings and allocations updated the 13th of every month."
 )
 
 footer()
