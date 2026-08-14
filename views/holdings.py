@@ -16,11 +16,9 @@ eyebrow("Holdings")
 st.markdown(
     '<p style="line-height:1.7; max-width:none !important; width:100% !important;'
     'margin:0 !important; text-align:left !important; color:var(--hx-bone);">'
-    "Every position the fund holds, with the reason it was bought. Weights are "
-    "stated as of the last rebalance and are refreshed on the thirteenth of "
-    "each month; between those dates they drift with price. Cash is shown as a "
-    "line of its own rather than netted out, so the figures below always sum to "
-    "the whole book."
+    "This is everything the fund owns and why we bought it. We update these numbers "
+    "on the 13th of each month — in between, they move around as prices change. Cash "
+    "counts as a line here, so the percentages add up to the whole fund."
     "</p>",
     unsafe_allow_html=True,
 )
