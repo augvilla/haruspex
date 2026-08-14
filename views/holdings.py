@@ -81,16 +81,19 @@ st.dataframe(
     display,
     hide_index=True,
     width="stretch",
+    # No fixed widths: Streamlit sizes each column to its content, so a long
+    # sleeve name like "Physical Infrastructure" is not clipped.
     column_config={
-        "sleeve": st.column_config.TextColumn("Sleeve", width="small"),
-        "ticker": st.column_config.TextColumn("Ticker", width="small"),
+        "sleeve": st.column_config.TextColumn("Sleeve"),
+        "ticker": st.column_config.TextColumn("Ticker"),
         "name": st.column_config.TextColumn("Name"),
         "weight": st.column_config.NumberColumn("Weight", format="%.1f%%"),
-        "thesis": st.column_config.TextColumn("Why we own it", width="large"),
+        "thesis": st.column_config.TextColumn("Why we own it"),
     },
 )
 st.caption(
-    "Holdings and allocations updated the 13th of every month."
+    "Edit data/holdings.csv to change this table. Nothing here is hardcoded "
+    "in the page."
 )
 
 footer()
