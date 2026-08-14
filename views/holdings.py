@@ -12,9 +12,10 @@ from lib.theme import PALETTE
 
 DATA = Path(__file__).resolve().parent.parent / "data" / "holdings.csv"
 
-page_header(
-    "Holdings",
-    "The book",
+section()
+
+eyebrow("Holdings")
+body(
     "REPLACE ME — one sentence on how to read this page, and how current the "
     "figures are. State the as-of date explicitly; a holdings page without one "
     "is worse than no holdings page.",
