@@ -16,9 +16,10 @@ section()
 
 eyebrow("Holdings")
 body(
-    "REPLACE ME — one sentence on how to read this page, and how current the "
-    "figures are. State the as-of date explicitly; a holdings page without one "
-    "is worse than no holdings page.",
+    "Every position the fund holds, with the reason it was bought, is shown below. "
+    "Weights are stated as of the last rebalance and are refreshed on the 13th of each "
+    "month; between those dates they drift with price. Cash is shown as a line of its "
+    "own rather than netted out, so the figures below always sum to the whole book.",
 )
 
 rule()
