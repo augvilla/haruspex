@@ -31,7 +31,9 @@ FONTS = {
 
 FONT_IMPORT = (
     "https://fonts.googleapis.com/css2"
-    "?family=Fraunces:opsz,wght@9..144,400;9..144,600"
+    # ital axis included: the hero epigraph uses real italics, not a
+    # browser-synthesized oblique.
+    "?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400"
     "&family=IBM+Plex+Sans:wght@400;500;600"
     "&family=IBM+Plex+Mono:wght@400;500"
     "&display=swap"
@@ -230,13 +232,22 @@ def _css() -> str:
         margin: 0;
         color: var(--hx-bone);
     }}
-    .hx-hero-sub {{
-        font-family: var(--hx-body);
-        font-size: clamp(1rem, 1.6vw, 1.3rem);
+    .hx-hero-quote {{
+        font-family: var(--hx-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(1.1rem, 1.85vw, 1.55rem);
         line-height: 1.5;
+        color: var(--hx-bone);
+        max-width: 46ch;
+        margin: 2.25rem auto 0 auto;
+    }}
+    .hx-hero-attrib {{
+        font-family: var(--hx-body);
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
         color: var(--hx-ash);
-        max-width: 44ch;
-        margin: 1.75rem auto 0 auto;
+        margin: 0.9rem auto 0 auto;
     }}
     .hx-hero-cue {{
         font-family: var(--hx-data) !important;
@@ -319,15 +330,20 @@ def _css() -> str:
 
     /* Streamlit's paragraph rule out-specifies a bare class, which kills the
        auto side-margins that centre the hero sentence. Force them back. */
-    .stApp .hx-hero .hx-hero-sub,
-    .stApp .hx-hero p.hx-hero-sub,
-    .stApp [data-testid="stMarkdownContainer"] .hx-hero-sub,
-    .stApp [data-testid="stMarkdownContainer"] p.hx-hero-sub {{
+    .stApp .hx-hero .hx-hero-quote,
+    .stApp [data-testid="stMarkdownContainer"] .hx-hero-quote {{
         margin-left: auto !important;
         margin-right: auto !important;
-        margin-top: 1.75rem !important;
+        margin-top: 2.25rem !important;
         text-align: center !important;
-        max-width: 44ch !important;
+        max-width: 46ch !important;
+        font-style: italic !important;
+    }}
+    .stApp .hx-hero .hx-hero-attrib,
+    .stApp [data-testid="stMarkdownContainer"] .hx-hero-attrib {{
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
     }}
 
     .stApp .hx-hero .hx-hero-cue,

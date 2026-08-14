@@ -44,7 +44,7 @@ with right:
     eyebrow("Direct")
     panel("Email", "REPLACE ME — the address you actually check.")
     st.write("")
-    panel("Campus", "REPLACE ME — meeting time and room, if the club meets publicly.")
+    panel("Meetings", "REPLACE ME — when and where the fund meets, if that's public.")
     st.write("")
     panel("Elsewhere", "REPLACE ME — LinkedIn, GitHub, or wherever the research lives.")
 

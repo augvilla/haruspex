@@ -66,19 +66,23 @@ def section() -> None:
     st.markdown('<div class="hx-section"></div>', unsafe_allow_html=True)
 
 
-def hero(name: str, sub: str, cue: str = "") -> None:
-    """Full-bleed opening band: one idea, centered, surrounded by air.
+def hero(name: str, quote: str = "", attribution: str = "", cue: str = "") -> None:
+    """Full-bleed opening band: the name, an epigraph, and the place.
 
     This is the single element that most distinguishes a firm's site from a
     dashboard, so it deliberately spans the full viewport and carries nothing
-    but the name and one sentence.
+    else. The epigraph is set in true italic Fraunces, which is why the ital
+    axis is requested in theme.FONT_IMPORT.
     """
+    quote_html = f'<p class="hx-hero-quote">{quote}</p>' if quote else ""
+    attrib_html = (
+        f'<p class="hx-hero-attrib">{attribution}</p>' if attribution else ""
+    )
     cue_html = f'<div class="hx-hero-cue">{cue}</div>' if cue else ""
     st.markdown(
         f'<div class="hx-bleed"><div class="hx-hero">'
         f'<h1 class="hx-hero-name">{name}</h1>'
-        f'<p class="hx-hero-sub">{sub}</p>'
-        f"{cue_html}"
+        f"{quote_html}{attrib_html}{cue_html}"
         f"</div></div>",
         unsafe_allow_html=True,
     )
@@ -166,7 +170,7 @@ def footer() -> None:
         """
         <div class="hx-footer">
           <strong>Haruspex Capital Partners</strong> &nbsp;·&nbsp;
-          Northwestern University, Evanston, Illinois<br>
+          Chicago, Illinois, United States of America<br>
           Nothing on this site is an offer to sell or a solicitation to buy any
           security, or investment advice of any kind. Figures shown are for
           illustration and do not represent audited results. Past performance

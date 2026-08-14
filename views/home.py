@@ -19,9 +19,10 @@ from lib.components import (
 # --- Hero: full bleed, centered, nothing but the name and one line ----------
 hero(
     name="Haruspex Capital Partners",
-    sub="REPLACE ME — one sentence on what the fund does. Say the strategy "
-        "plainly. This is the only line most visitors will read.",
-    cue="Northwestern University · Est. 2026",
+    quote="Things do not signify because they have happened; "
+          "they happen because they are going to signify.",
+    attribution="— Seneca",
+    cue="Chicago, Illinois, United States of America",
 )
 
 section()
