@@ -1,33 +1,47 @@
-"""About — the name, the mandate, the constraints."""
+"""About — the name, the mandate, the constraints.
+
+The centred paragraphs are written inline rather than through a shared helper
+so this page cannot break if lib/ is a different version. Inline !important
+beats Streamlit's own paragraph rules.
+"""
 
 import streamlit as st
 
-from lib.components import body, eyebrow, footer, panel, rule, section
+from lib.components import eyebrow, footer, panel, rule, section
+
+CENTERED = (
+    "line-height:1.7; max-width:62ch; margin:0 auto !important;"
+    "text-align:center !important; color:var(--hx-bone);"
+)
+
+
+def centered(text: str) -> None:
+    """A body paragraph, centred, with no dependency on lib/components."""
+    st.markdown(f'<p style="{CENTERED}">{text}</p>', unsafe_allow_html=True)
+
 
 section()
 eyebrow("About")
-body(
+centered(
     "A haruspex was a Roman priest who read the future in the entrails of "
     "sacrificed animals — the liver above all, examined region by region for "
     "the will of the gods. We take the name for the method, not the "
     "superstition: the work is reading what a business is made of — where it "
     "sits in a supply chain, what stops functioning without it — rather than "
-    "reading its price.",
-    center=True,
+    "reading its price."
 )
 
 rule()
 
 eyebrow("Mandate")
-body(
+centered(
     "The fund may hold listed equities, exchange-traded funds including "
     "leveraged and single-stock structures, and digital assets held directly "
     "or through an index vehicle. It may not use options, futures, or margin "
     "borrowed against the account: leverage enters the book only through the "
     "internal structure of a fund, never through the brokerage. Every position "
     "is entered with a written reason on file, and exits when that reason "
-    "stops being true.",
-    center=True,
+    "stops being true."
 )
 
 c1, c2, c3 = st.columns(3, gap="medium")
@@ -54,7 +68,7 @@ with c3:
 rule()
 
 eyebrow("Process")
-body(
+centered(
     "Every position begins as a written note: what the business does, why it "
     "is hard to replace, what would have to be true for the thesis to fail, "
     "and what the fund is prepared to lose. The note is written before the "
@@ -62,8 +76,7 @@ body(
     "and not one reconstructed later. Trades are logged one row per round trip "
     "and reviewed against the original note when they close. The fund is small "
     "enough that one person makes the call, which makes the written record the "
-    "only real check on it.",
-    center=True,
+    "only real check on it."
 )
 
 rule()
