@@ -56,10 +56,10 @@ with col1:
 with col2:
     panel(
         "Management",
-        "We are an actively managed fund. Capital is mainly allocated to "
-        "crypto assets, quantum computing, robotics and space technology, "
-        "and AI infrastructure, with any remainder staked in altcoins. "
-        "This portfolio is intention built upon calculated risk.",
+        "We are an actively managed fund. Capital is allocated principally "
+        "to crypto assets, quantum computing, robotics and space technology, "
+        "and AI infrastructure, with any remainder staked in altcoins. This "
+        "portfolio is built deliberately on calculated risk.",
     )
 with col3:
     panel(
