@@ -64,7 +64,7 @@ with col2:
 with col3:
     panel(
         "Duration",
-        "This is a high-risk book that is not trying to match an index. Rome "
+        "This is a high-risk portfolio. Rome "
         "grew by strategic planning and rapid execution, and so does this "
         "fund. We look constantly to the future, and we do not sell merely "
         "because a week went badly or because a position feels uncomfortable.",
