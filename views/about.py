@@ -69,20 +69,6 @@ with c3:
 
 rule()
 
-eyebrow("Process")
-para(
-    "Every position begins as a written note: what the business does, why it "
-    "is hard to replace, what would have to be true for the thesis to fail, "
-    "and what the fund is prepared to lose. The note is written before the "
-    "trade rather than after it, so the reason on file is the reason at entry "
-    "and not one reconstructed later. Trades are logged one row per round trip "
-    "and reviewed against the original note when they close. The fund is small "
-    "enough that one person makes the call, which makes the written record the "
-    "only real check on it."
-)
-
-rule()
-
 eyebrow("The haruspex")
 img_l, img_c, img_r = st.columns([1, 2, 1])
 with img_c:
