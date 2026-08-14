@@ -51,37 +51,29 @@ with col1:
         "The screen",
         "We look for chokepoints — companies whose product is hard to "
         "substitute anywhere in the AI compute stack, from interconnect and "
-        "optics to the power feeding the racks. On the tactical side we screen "
-        "large caps into earnings, checking whether a name has already run up "
-        "into the print and whether the multiple is stretched enough that a "
-        "beat still sells off. And we hold digital assets on conviction. "
-        "Crypto peaked in October 2025 and has spent the time since "
-        "consolidating against a fixed and shrinking issuance schedule. We "
-        "think it re-rates from here, and we think this is what currency looks "
-        "like next.",
+        "optics to the power feeding the racks. We also hold digital assets on "
+        "conviction: crypto peaked in October 2025 and has consolidated since "
+        "against a fixed and shrinking issuance schedule. We think it re-rates "
+        "from here, and that this is what currency looks like next.",
     )
 with col2:
     panel(
         "The sizing",
         "The book is actively managed rather than run to fixed weights. "
         "Exposure concentrates in quantum computing, AI infrastructure and the "
-        "power that feeds it, digital assets, and a short list of single names "
-        "tied to the compute supply chain. These sectors are correlated and we "
-        "size them knowing it — a risk-off week moves all of them in the same "
-        "direction at once. Leveraged instruments are sized as though the "
-        "position could go to zero, because the daily-reset structure means it "
-        "can.",
+        "power that feeds it, and digital assets. These sectors are correlated "
+        "and we size them knowing it. Leveraged instruments are sized as though "
+        "the position could go to zero, because the daily-reset structure means "
+        "it can.",
     )
 with col3:
     panel(
         "The exit",
         "Let's be direct: this is a high-risk book. Leveraged instruments, "
         "frontier sectors, and assets that didn't exist twenty years ago. We "
-        "are not trying to match an index and we are not interested in the "
-        "kind of portfolio that never has a bad month. Rome wasn't built by "
-        "people who wanted their money back. We sell when the reason we bought "
-        "stops being true — not when a position gets uncomfortable, and not "
-        "because one week went badly.",
+        "are not trying to match an index. Rome wasn't built by people who "
+        "wanted their money back. We sell when the reason we bought stops "
+        "being true — not because one week went badly.",
     )
 
 section()

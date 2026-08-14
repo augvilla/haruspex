@@ -124,8 +124,32 @@ def _css() -> str:
         margin: 3.5rem 0 2.25rem 0;
     }}
 
-    /* ---- Panels ------------------------------------------------------ */
+    /* ---- Panels ------------------------------------------------------
+       :has() scopes this to rows that actually contain a panel, so the
+       stretch never touches the stat row, the team grid, or the holdings
+       layout. Without it, each card sizes to its own text and a long block
+       leaves the others hanging. */
+    [data-testid="stHorizontalBlock"]:has(.hx-panel) {{
+        align-items: stretch;
+    }}
+    [data-testid="stColumn"]:has(.hx-panel) {{
+        display: flex;
+    }}
+    [data-testid="stColumn"]:has(.hx-panel) > div {{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }}
+    [data-testid="stColumn"]:has(.hx-panel) [data-testid="stVerticalBlock"],
+    [data-testid="stColumn"]:has(.hx-panel) [data-testid="stMarkdown"],
+    [data-testid="stColumn"]:has(.hx-panel) [data-testid="stMarkdownContainer"] {{
+        height: 100%;
+        flex: 1 1 auto;
+    }}
+
     .hx-panel {{
+        display: flex;
+        flex-direction: column;
         background: var(--hx-panel);
         border: 1px solid var(--hx-line);
         padding: 1.5rem 1.6rem;
