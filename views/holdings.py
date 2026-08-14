@@ -1,25 +1,28 @@
-"""Holdings — the sixteen-region allocation map plus the position table."""
+"""Holdings — the sleeve chart and the position table, both driven by CSV."""
 
 from pathlib import Path
 
+import altair as alt
 import pandas as pd
 import streamlit as st
 
-from lib.components import (
-    body, eyebrow, footer, heading, page_header, rule, section, templum,
-)
-from lib.theme import PALETTE
+from lib.components import eyebrow, footer, rule, section
+from lib.theme import FONTS, PALETTE
 
 DATA = Path(__file__).resolve().parent.parent / "data" / "holdings.csv"
 
 section()
-
 eyebrow("Holdings")
-body(
-    "Every position the fund holds, with the reason it was bought, is shown below. "
-    "Weights are stated as of the last rebalance and are refreshed on the 13th of each "
-    "month; between those dates they drift with price. Cash is shown as a line of its "
-    "own rather than netted out, so the figures below always sum to the whole book.",
+st.markdown(
+    '<p style="line-height:1.7; max-width:none !important; width:100% !important;'
+    'margin:0 !important; text-align:left !important; color:var(--hx-bone);">'
+    "Every position the fund holds, with the reason it was bought. Weights are "
+    "stated as of the last rebalance and are refreshed on the thirteenth of "
+    "each month; between those dates they drift with price. Cash is shown as a "
+    "line of its own rather than netted out, so the figures below always sum to "
+    "the whole book."
+    "</p>",
+    unsafe_allow_html=True,
 )
 
 rule()
@@ -34,44 +37,50 @@ except FileNotFoundError:
     )
     st.stop()
 
-# --- Allocation map ---------------------------------------------------------
-# Each of the sixteen regions is one percentage-point bucket of the book,
-# rounded. Shaded regions are deployed capital; empty regions are not.
-deployed = holdings.loc[holdings["ticker"] != "CASH", "weight"].sum()
-lit = min(16, round(deployed * 16))
-
-left, right = st.columns([1, 1.3], gap="large", vertical_alignment="center")
-with left:
-    st.markdown(
-        f'<div style="display:flex;justify-content:center">'
-        f"{templum(size=260, filled=list(range(lit)))}</div>",
-        unsafe_allow_html=True,
-    )
-with right:
-    eyebrow("Deployment")
-    heading(f"{lit} of 16 regions")
-    body(
-        f"{deployed:.0%} of the book is deployed; the remainder is held in "
-        "cash. Each shaded region is roughly one-sixteenth of capital. The "
-        "map redraws itself from data/holdings.csv, so you never update it "
-        "by hand."
-    )
-
-rule()
+# Sort once, heaviest first — both the chart and the table inherit this.
+holdings = holdings.sort_values("weight", ascending=False).reset_index(drop=True)
 
 # --- Sleeves ----------------------------------------------------------------
 eyebrow("By sleeve")
+
 sleeves = (
     holdings.groupby("sleeve", as_index=False)["weight"]
     .sum()
     .sort_values("weight", ascending=False)
 )
-st.bar_chart(
-    sleeves.set_index("sleeve"),
-    horizontal=True,
-    color=PALETTE["bronze"],
-    height=260,
+
+# Built with Altair rather than st.bar_chart: st.bar_chart ships with pan and
+# zoom enabled, which lets the axis be dragged below zero. This chart has no
+# selection or .interactive() call, so the scale is fixed to [0, max].
+upper = float(sleeves["weight"].max()) * 1.15
+chart = (
+    alt.Chart(sleeves)
+    .mark_bar(size=26, color=PALETTE["bronze"])
+    .encode(
+        y=alt.Y("sleeve:N", sort="-x", title=None,
+                axis=alt.Axis(labelLimit=220)),
+        x=alt.X(
+            "weight:Q",
+            title=None,
+            scale=alt.Scale(domain=[0, upper], nice=False, clamp=True),
+            axis=alt.Axis(format="%", gridColor=PALETTE["line"], tickCount=6),
+        ),
+        tooltip=[
+            alt.Tooltip("sleeve:N", title="Sleeve"),
+            alt.Tooltip("weight:Q", title="Weight", format=".1%"),
+        ],
+    )
+    .properties(height=max(140, 52 * len(sleeves)))
+    .configure_view(strokeWidth=0)
+    .configure_axis(
+        labelColor=PALETTE["ash"],
+        labelFont=FONTS["data"].split(",")[0].strip("'"),
+        domainColor=PALETTE["line"],
+        tickColor=PALETTE["line"],
+    )
+    .configure(background="transparent")
 )
+st.altair_chart(chart, width="stretch")
 
 rule()
 
@@ -92,9 +101,6 @@ st.dataframe(
         "thesis": st.column_config.TextColumn("Why we own it"),
     },
 )
-st.caption(
-    "Edit data/holdings.csv to change this table. Nothing here is hardcoded "
-    "in the page."
-)
+st.caption("Holdings and allocations updated the 13th of every month.")
 
 footer()
