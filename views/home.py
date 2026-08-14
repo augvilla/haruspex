@@ -102,9 +102,9 @@ with s3:
 with s4:
     sleeve(
         "Digital assets",
-        "A broad crypto index alongside a staked position, held on a cycle "
+        "A broad crypto index alongside staked positions, held on a cycle "
         "view rather than a trade.",
-        "NCIQ · ATOM",
+        "Bitcoin · Etherium · Solana · XRP · Cardano · Cosmos",
     )
 
 section()
