@@ -76,14 +76,14 @@ eyebrow("The book")
 s1, s2 = st.columns(2, gap="medium")
 with s1:
     sleeve(
-        "Quantum computing",
-        "Pure-play quantum hardware, held through a leveraged fund and sized "
-        "as a position that can go to zero.",
-        "QPUX",
+        "Quantum Computing",
+        "Pure-play exposure into quantum computing and machine learning, "
+        "held through leverages and swaps.",
+        "IONQ · RGTI · QBTS · QUBT",
     )
 with s2:
     sleeve(
-        "AI infrastructure",
+        "AI Infrastructure",
         "The compute, optics and power the build-out runs on — the parts "
         "nothing else works without.",
         "NVDA · ALAB · COHR · VRT · LAZR · MGK",
@@ -94,7 +94,7 @@ st.write("")
 s3, s4 = st.columns(2, gap="medium")
 with s3:
     sleeve(
-        "Robotics and space",
+        "Physical Infrastructure",
         "Tesla and SpaceX in a single position, covering the two ends of the "
         "same automation thesis.",
         "ELOL",
@@ -104,7 +104,7 @@ with s4:
         "Digital assets",
         "A broad crypto index alongside staked positions, held on a cycle "
         "view rather than a trade.",
-        "Bitcoin · Etherium · Solana · Cardano · Cosmos",
+        "Bitcoin · Etherium · XRP · Solana",
     )
 
 section()
