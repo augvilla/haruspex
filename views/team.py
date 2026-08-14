@@ -8,12 +8,12 @@ from lib.components import (
 
 # Edit this list and the page rebuilds itself. Order is the order shown.
 MEMBERS = [
-    {"name": "Augustine Villalobos", "role": "Founder & Senior Manager", "bio": "Northwestern University '28."},
-    {"name": "REPLACE ME", "role": "Chief Investment Officer", "bio": "One or two lines."},
-    {"name": "REPLACE ME", "role": "Risk", "bio": "One or two lines."},
-    {"name": "REPLACE ME", "role": "Research", "bio": "One or two lines."},
-    {"name": "REPLACE ME", "role": "Research", "bio": "One or two lines."},
-    {"name": "REPLACE ME", "role": "Operations", "bio": "One or two lines."},
+    {"name": "Augustine Villalobos", "role": "Founder & Managing Partner", "bio": "Northwestern University '28"},
+    {"name": "First Last", "role": "Chief Investment Officer", "bio": "Title"},
+    {"name": "First Last", "role": "Risk", "bio": "Title"},
+    {"name": "First Last", "role": "Research", "bio": "Title"},
+    {"name": "First Last", "role": "Research", "bio": "Title"},
+    {"name": "First Last", "role": "Operations", "bio": "Title"},
 ]
 
 section()
