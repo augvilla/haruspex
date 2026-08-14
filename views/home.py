@@ -19,7 +19,7 @@ from lib.components import (
 hero(
     name="Haruspex Capital Partners",
     quote="Things do not signify because they have happened; "
-          "they happen because they are going to signify. - Seneca",
+          "they happen because they are going to signify.",
     attribution="— Seneca",
 )
 
