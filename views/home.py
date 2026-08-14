@@ -1,4 +1,4 @@
-"""Home — full-bleed hero, one statement, then the supporting sections."""
+"""Home — full-bleed hero, the numbers, then the supporting sections."""
 
 import streamlit as st
 
@@ -12,27 +12,15 @@ from lib.components import (
     section,
     slot,
     stat,
-    statement,
     templum,
 )
 
-# --- Hero: full bleed, centered, nothing but the name and one line ----------
+# --- Hero: full bleed, centered, nothing but the name and the epigraph ------
 hero(
     name="Haruspex Capital Partners",
     quote="Things do not signify because they have happened; "
           "they happen because they are going to signify.",
     attribution="— Seneca",
-    cue="Chicago, Illinois, United States of America",
-)
-
-section()
-
-# --- Statement: the single large paragraph ----------------------------------
-statement(
-    "<strong>We read structure, not surface.</strong> REPLACE ME — two or "
-    "three sentences on how the fund actually operates and what makes its "
-    "approach different from a stock-picking club. Write it as prose, not "
-    "bullets."
 )
 
 section()
@@ -42,18 +30,13 @@ rule()
 eyebrow("At a glance")
 c1, c2, c3, c4 = st.columns(4)
 with c1:
-    stat("—", "Capital under management")
+    stat("$1,000", "Capital under management")
 with c2:
-    stat("—", "Positions held")
+    stat("1+", "Positions held")
 with c3:
-    stat("—", "Members")
+    stat("1+", "Members")
 with c4:
-    stat("—", "Inception")
-
-st.caption(
-    "Replace each em-dash with a real figure, or delete the block until you "
-    "have numbers worth showing."
-)
+    stat("Aug 2026", "Inception")
 
 section()
 rule()

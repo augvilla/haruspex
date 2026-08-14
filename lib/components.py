@@ -74,15 +74,19 @@ def hero(name: str, quote: str = "", attribution: str = "", cue: str = "") -> No
     else. The epigraph is set in true italic Fraunces, which is why the ital
     axis is requested in theme.FONT_IMPORT.
     """
-    quote_html = f'<p class="hx-hero-quote">{quote}</p>' if quote else ""
+    # Attribution rides inline at the end of the quote, in roman, so the
+    # epigraph reads as one unit rather than two stacked lines.
     attrib_html = (
-        f'<p class="hx-hero-attrib">{attribution}</p>' if attribution else ""
+        f' <span class="hx-hero-attrib">{attribution}</span>' if attribution else ""
+    )
+    quote_html = (
+        f'<p class="hx-hero-quote">{quote}{attrib_html}</p>' if quote else ""
     )
     cue_html = f'<div class="hx-hero-cue">{cue}</div>' if cue else ""
     st.markdown(
         f'<div class="hx-bleed"><div class="hx-hero">'
         f'<h1 class="hx-hero-name">{name}</h1>'
-        f"{quote_html}{attrib_html}{cue_html}"
+        f"{quote_html}{cue_html}"
         f"</div></div>",
         unsafe_allow_html=True,
     )

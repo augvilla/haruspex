@@ -244,10 +244,12 @@ def _css() -> str:
     }}
     .hx-hero-attrib {{
         font-family: var(--hx-body);
-        font-size: 0.9rem;
+        font-style: normal;
+        font-size: 0.82em;
         letter-spacing: 0.04em;
         color: var(--hx-ash);
-        margin: 0.9rem auto 0 auto;
+        white-space: nowrap;
+        margin-left: 0.5em;
     }}
     .hx-hero-cue {{
         font-family: var(--hx-data) !important;
@@ -341,9 +343,8 @@ def _css() -> str:
     }}
     .stApp .hx-hero .hx-hero-attrib,
     .stApp [data-testid="stMarkdownContainer"] .hx-hero-attrib {{
-        margin-left: auto !important;
-        margin-right: auto !important;
-        text-align: center !important;
+        font-style: normal !important;
+        font-family: var(--hx-body) !important;
     }}
 
     .stApp .hx-hero .hx-hero-cue,
