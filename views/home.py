@@ -22,7 +22,7 @@ hero(
 )
 
 section()
-rule()
+section()
 
 # --- Numbers ----------------------------------------------------------------
 eyebrow("At a glance")
@@ -36,7 +36,6 @@ with c3:
 with c4:
     stat("Aug 2026", "Inception")
 
-section()
 rule()
 
 # --- Strategy ---------------------------------------------------------------
@@ -68,11 +67,10 @@ with col3:
         "because a position feels uncomfortable.",
     )
 
-section()
 rule()
 
 # --- Sleeves ----------------------------------------------------------------
-eyebrow("The book")
+eyebrow("Target")
 s1, s2 = st.columns(2, gap="medium")
 with s1:
     sleeve(
@@ -103,6 +101,5 @@ with s4:
         "Bitcoin · Etherium · XRP · Solana",
     )
 
-section()
 
 footer()
