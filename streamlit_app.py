@@ -16,7 +16,7 @@ from lib.theme import apply_theme
 
 st.set_page_config(
     page_title="Haruspex Capital Partners",
-    page_icon="assets/favicon.svg",
+    page_icon="assets/favicon.png",
     layout="wide",
 )
 
@@ -31,6 +31,6 @@ PAGES = [
     st.Page("views/contact.py", title="Contact"),
 ]
 
-st.logo("assets/logo-placeholder.svg", size="large")
+st.logo("assets/logo.png", size="large")
 
 st.navigation(PAGES, position="top").run()
