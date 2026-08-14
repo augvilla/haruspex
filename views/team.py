@@ -40,6 +40,4 @@ for start in range(0, len(MEMBERS), COLUMNS):
             )
     st.write("")
 
-rule()
-
 footer()
