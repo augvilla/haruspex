@@ -28,13 +28,13 @@ section()
 eyebrow("At a glance")
 c1, c2, c3, c4 = st.columns(4)
 with c1:
-    stat("$1,000+", "Capital under management")
+    stat("$1,000+", "Assets")
 with c2:
-    stat("3+", "Positions held")
+    stat("3+", "Positions")
 with c3:
     stat("Aug 2026", "Inception")
 with c4:
-    stat("1+", "Managers")
+    stat("1+", "Management")
 
 rule()
 
