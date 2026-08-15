@@ -118,16 +118,15 @@ st.altair_chart(chart, width="stretch")
 rule()
 
 # --- The caveat -------------------------------------------------------------
-# Centred via a wrapper div: an inline-block paragraph inside a text-align
-# centre parent cannot be knocked out of alignment by Streamlit's own rules.
+# Centred with plain inline CSS. Streamlit's markdown sanitizer discards
+# declarations carrying !important, so this must not use it.
 eyebrow("Read this before the numbers")
 st.markdown(
-    '<div style="text-align:center !important; width:100%;">'
+    '<div style="text-align:center; width:100%;">'
     '<p style="display:inline-block; max-width:62ch; line-height:1.7;'
-    'text-align:center !important; margin:0 auto !important;'
-    'color:var(--hx-bone);">'
+    ' text-align:center; margin:0 auto; color:var(--hx-bone);">'
     "This record is short. The fund started in August 2026, and a few weeks of "
-    "numbers tell you close to nothing — a good stretch this early is as "
+    "numbers tell you close to nothing \u2014 a good stretch this early is as "
     "likely to be luck as skill. The leveraged positions also mean the swings "
     "are wider than the returns suggest, so the drawdown is the number worth "
     "watching, not the total. We publish from the beginning rather than "
