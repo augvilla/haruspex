@@ -12,6 +12,7 @@ Pages live in views/. To add one, write the file and add a st.Page line below.
 
 import streamlit as st
 
+from lib.gate import require_password
 from lib.theme import apply_theme
 
 st.set_page_config(
@@ -21,6 +22,10 @@ st.set_page_config(
 )
 
 apply_theme()
+
+# Gate is controlled entirely by the [auth] block in Streamlit secrets.
+# Set enabled = false there to take the site public.
+require_password()
 
 PAGES = [
     st.Page("views/home.py", title="Home", default=True),
