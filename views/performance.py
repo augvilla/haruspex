@@ -118,20 +118,20 @@ st.altair_chart(chart, width="stretch")
 rule()
 
 # --- The caveat -------------------------------------------------------------
-# Centred with plain inline CSS. Streamlit's markdown sanitizer discards
-# declarations carrying !important, so this must not use it.
+# Full-width paragraph: no max-width, so its edges line up with the rules and
+# the chart above it. No !important anywhere — Streamlit's markdown sanitizer
+# discards inline declarations that carry it.
 eyebrow("Read this before the numbers")
 st.markdown(
-    '<div style="text-align:center; width:100%;">'
-    '<p style="display:inline-block; max-width:62ch; line-height:1.7;'
-    ' text-align:center; margin:0 auto; color:var(--hx-bone);">'
+    '<p style="line-height:1.7; margin:0; text-align:left;'
+    ' color:var(--hx-bone);">'
     "This record is short. The fund started in August 2026, and a few weeks of "
     "numbers tell you close to nothing \u2014 a good stretch this early is as "
     "likely to be luck as skill. The leveraged positions also mean the swings "
     "are wider than the returns suggest, so the drawdown is the number worth "
     "watching, not the total. We publish from the beginning rather than "
     "waiting for a flattering run to start from."
-    "</p></div>",
+    "</p>",
     unsafe_allow_html=True,
 )
 
