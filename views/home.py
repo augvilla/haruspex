@@ -74,7 +74,7 @@ eyebrow("Target")
 s1, s2 = st.columns(2, gap="medium")
 with s1:
     sleeve(
-        "Photonics & Optics",
+        "Optics & Photonics",
         "The optical parts that carry data between chips and servers, now "
         "that copper is running into its physical limits.",
         "Lumentum · AXT Inc · Coherent · Anthropic",
@@ -92,7 +92,7 @@ st.write("")
 s3, s4 = st.columns(2, gap="medium")
 with s3:
     sleeve(
-        "Aerospace and Robotics",
+        "Aerospace & Robotics",
         "Tesla and SpaceX in a single position: automation on the ground "
         "and launch capacity above it.",
         "SpaceX · Tesla · Starlink · Optimus",
