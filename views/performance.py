@@ -75,15 +75,29 @@ rule()
 
 # --- Chart ------------------------------------------------------------------
 eyebrow("Return since inception")
+heading("Fund against the S&P 500")
 
-tidy = perf.melt("date", ["nav", "benchmark"], var_name="series", value_name="value")
+# Plot dates as ordinal categories, not on a continuous time axis. A temporal
+# axis draws the gap between Friday and Monday to scale, so weekends appear as
+# long flat stretches the fund never actually traded through. Ordinal spaces
+# every recorded date evenly and skips whatever is not in the file.
+perf["label"] = perf["date"].dt.strftime("%b %-d")
+order = perf["label"].tolist()
+
+tidy = perf.melt(["date", "label"], ["nav", "benchmark"],
+                 var_name="series", value_name="value")
 tidy["series"] = tidy["series"].map({"nav": "Haruspex", "benchmark": "S&P 500"})
 
 chart = (
     alt.Chart(tidy)
     .mark_line(strokeWidth=1.8, point=len(perf) < 5)
     .encode(
-        x=alt.X("date:T", title=None, axis=alt.Axis(grid=False)),
+        x=alt.X(
+            "label:O",
+            title=None,
+            sort=order,
+            axis=alt.Axis(grid=False, labelAngle=0, labelOverlap="greedy"),
+        ),
         y=alt.Y(
             "value:Q",
             title=None,
@@ -101,7 +115,7 @@ chart = (
             legend=alt.Legend(orient="top-left", labelColor=PALETTE["bone"]),
         ),
         tooltip=[
-            alt.Tooltip("date:T", title="Date"),
+            alt.Tooltip("label:N", title="Date"),
             alt.Tooltip("series:N", title=None),
             alt.Tooltip("value:Q", title="Return", format="+.2%"),
         ],
