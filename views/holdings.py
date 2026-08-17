@@ -16,9 +16,11 @@ eyebrow("Holdings")
 st.markdown(
     '<p style="line-height:1.7; max-width:none !important; width:100% !important;'
     'margin:0 !important; text-align:left !important; color:var(--hx-bone);">'
-    "This is everything the fund owns and why we bought it. We update these numbers "
-    "on the 13th of each month — in between, they move around as prices change. Cash "
-    "counts as a line here, so the percentages add up to the whole fund."
+    "Every position the fund holds, with the reason it was bought. Weights are "
+    "stated as of the last rebalance and are refreshed on the thirteenth of "
+    "each month; between those dates they drift with price. Cash is shown as a "
+    "line of its own rather than netted out, so the figures below always sum to "
+    "the whole book."
     "</p>",
     unsafe_allow_html=True,
 )
@@ -35,6 +37,18 @@ except FileNotFoundError:
     )
     st.stop()
 
+# Coerce weight to a number first: a stray Unicode minus or stray character in
+# the CSV would otherwise load the column as text and crash the chart later.
+holdings["weight"] = pd.to_numeric(holdings["weight"], errors="coerce")
+bad = holdings["weight"].isna().sum()
+if bad:
+    st.warning(
+        f"{bad} row(s) in data/holdings.csv have a weight that is not a "
+        "number and were dropped. Check for a Unicode minus (\u2212) instead "
+        "of a hyphen."
+    )
+    holdings = holdings.dropna(subset=["weight"])
+
 # Sort once, heaviest first — both the chart and the table inherit this.
 holdings = holdings.sort_values("weight", ascending=False).reset_index(drop=True)
 
@@ -50,7 +64,11 @@ sleeves = (
 # Built with Altair rather than st.bar_chart: st.bar_chart ships with pan and
 # zoom enabled, which lets the axis be dragged below zero. This chart has no
 # selection or .interactive() call, so the scale is fixed to [0, max].
+# The domain must reach below zero when a sleeve is negative — an
+# unallocated-cash line goes negative whenever positions exceed the capital
+# base. A domain pinned at zero would clamp that bar to nothing.
 upper = float(sleeves["weight"].max()) * 1.15
+lower = min(0.0, float(sleeves["weight"].min()) * 1.15)
 chart = (
     alt.Chart(sleeves)
     .mark_bar(size=26, color=PALETTE["bronze"])
@@ -60,7 +78,7 @@ chart = (
         x=alt.X(
             "weight:Q",
             title=None,
-            scale=alt.Scale(domain=[0, upper], nice=False, clamp=True),
+            scale=alt.Scale(domain=[lower, upper], nice=False, clamp=True),
             axis=alt.Axis(format="%", gridColor=PALETTE["line"], tickCount=6),
         ),
         tooltip=[
