@@ -75,7 +75,6 @@ rule()
 
 # --- Chart ------------------------------------------------------------------
 eyebrow("Return since inception")
-heading("Fund against the S&P 500")
 
 tidy = perf.melt("date", ["nav", "benchmark"], var_name="series", value_name="value")
 tidy["series"] = tidy["series"].map({"nav": "Haruspex", "benchmark": "S&P 500"})
