@@ -45,18 +45,18 @@ col1, col2, col3 = st.columns(3, gap="medium")
 with col1:
     panel(
         "Allocation",
-        "We invest in the chokepoints of the AI build-out — compute, "
-        "optics and power — and in the robotics and space infrastructure "
-        "built upon them. We also hold crypto, which has topped out of a "
-        "strong four-year cycle, plus pre-IPO Anthropic SPV exposure.",
+        "We hold four positions. The largest is photonics: the optical parts "
+        "that move data between chips and servers, now that copper is running "
+        "into its physical limits. Alongside it sit quantum and machine-"
+        "learning hardware, Tesla and SpaceX, and the largest crypto assets.",
     )
 with col2:
     panel(
         "Management",
-        "We are an actively managed fund. Capital is allocated principally "
-        "to crypto assets, quantum computing, robotics and space technology, "
-        "and AI infrastructure, with any remainder staked in altcoins. This "
-        "portfolio is built deliberately on calculated risk.",
+        "Four positions, managed actively, with no fixed weights. We would "
+        "rather own a handful of things we can explain than a long list we "
+        "cannot. One position carries leverage built into the fund itself; the "
+        "rest do not, and the portfolio never borrows on margin.",
     )
 with col3:
     panel(
@@ -64,7 +64,7 @@ with col3:
         "This is a high-risk portfolio. Rome grew by strategic planning and "
         "rapid execution, and so does this fund. We look constantly to the "
         "future, and we do not sell merely because a week went badly or "
-        "because a position feels uncomfortable.",
+        "because a position has become uncomfortable to hold.",
     )
 
 rule()
