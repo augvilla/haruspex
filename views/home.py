@@ -30,7 +30,7 @@ c1, c2, c3, c4 = st.columns(4)
 with c1:
     stat("$1,000+", "Assets")
 with c2:
-    stat("3+", "Positions")
+    stat("4+", "Positions")
 with c3:
     stat("Aug 2026", "Inception")
 with c4:
