@@ -81,7 +81,7 @@ with s1:
     )
 with s2:
     sleeve(
-        "Pure-Play Quantum",
+        "Quantum Computing",
         "Thirteen companies whose business is quantum itself, actively "
         "managed and concentrated rather than indexed.",
         "IonQ · Quantinuum · D-Wave · Infleqtion",
@@ -92,10 +92,10 @@ st.write("")
 s3, s4 = st.columns(2, gap="medium")
 with s3:
     sleeve(
-        "Physical Infrastructure",
+        "Aerospace and Robotics",
         "Tesla and SpaceX in a single position: automation on the ground "
         "and launch capacity above it.",
-        "SpaceX · Tesla · Starlink · xAI",
+        "SpaceX · Tesla · Starlink · Optimus",
     )
 with s4:
     sleeve(
