@@ -47,8 +47,8 @@ with col1:
         "Allocation",
         "We hold four positions. The largest is photonics: the optical parts "
         "that move data between chips and servers, now that copper is running "
-        "into its physical limits. Alongside it sit quantum and machine-"
-        "learning hardware, Tesla and SpaceX, and the largest crypto assets.",
+        "into its physical limits. Alongside it sit quantum computing hardware "
+        "and software, Tesla and SpaceX, and the largest crypto assets.",
     )
 with col2:
     panel(
