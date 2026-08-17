@@ -1,9 +1,9 @@
 """Performance — the record so far, measured against the S&P 500.
 
-data/performance.csv holds CUMULATIVE PERCENTAGE GROWTH, not prices: the first
-row is 0.0 and 0.10 means up ten percent since inception. Every figure is
-derived by converting that to a growth index (1 + value) first, so a starting
-value of zero never lands in a denominator.
+data/performance.csv holds CUMULATIVE RETURN IN PERCENTAGE POINTS, not prices
+and not decimals: the first row is 0.00 and 4.52 means up 4.52 percent since
+inception. Values are converted to rates on load, then to a growth index
+(1 + rate), so a starting value of zero never lands in a denominator.
 """
 
 from pathlib import Path
@@ -29,6 +29,10 @@ except FileNotFoundError:
         "at 0."
     )
     st.stop()
+
+# The CSV is written in percentage points so it stays easy to hand-edit.
+# Convert to rates once, here, and everything downstream works in decimals.
+perf[["nav", "benchmark"]] = perf[["nav", "benchmark"]] / 100.0
 
 enough = len(perf) >= 2
 
@@ -71,6 +75,7 @@ rule()
 
 # --- Chart ------------------------------------------------------------------
 eyebrow("Return since inception")
+heading("Fund against the S&P 500")
 
 tidy = perf.melt("date", ["nav", "benchmark"], var_name="series", value_name="value")
 tidy["series"] = tidy["series"].map({"nav": "Haruspex", "benchmark": "S&P 500"})
