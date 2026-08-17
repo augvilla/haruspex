@@ -74,15 +74,17 @@ eyebrow("Target")
 s1, s2 = st.columns(2, gap="medium")
 with s1:
     sleeve(
-        "Quantum Computing",
-        "Pure-play exposure to quantum hardware, held through a leveraged fund that takes its position via swaps.",
-        "IONQ · Rigetti · D-Wave · Quantum Computing",
+        "Photonics & Optics",
+        "The optical parts that carry data between chips and servers, now "
+        "that copper is running into its physical limits.",
+        "Lumentum · AXT Inc · Coherent · Anthropic",
     )
 with s2:
     sleeve(
-        "AI Infrastructure",
-        "The compute, interconnect and optics the build-out runs on — the parts nothing else works without.",
-        "NVIDIA · Astera Labs · Coherent · Lumentum",
+        "Pure-Play Quantum",
+        "Thirteen companies whose business is quantum itself, actively "
+        "managed and concentrated rather than indexed.",
+        "IonQ · Quantinuum · D-Wave · Infleqtion",
     )
 
 st.write("")
@@ -91,15 +93,16 @@ s3, s4 = st.columns(2, gap="medium")
 with s3:
     sleeve(
         "Physical Infrastructure",
-        "The hardware layer beneath it all: launch, vehicles, data centre power and the crews who build the grid.",
-        "SpaceX · Tesla · Vertiv · Quanta Services",
+        "Tesla and SpaceX in a single position: automation on the ground "
+        "and launch capacity above it.",
+        "SpaceX · Tesla · Starlink · xAI",
     )
 with s4:
     sleeve(
-        "Digital assets",
-        "A broad index of the major chains, held on a cycle view rather than as a trade, with eligible assets staked.",
+        "Digital Assets",
+        "The ten largest crypto assets by market value, rebalanced monthly "
+        "and held on a cycle view.",
         "Bitcoin · Ethereum · XRP · Solana",
     )
-
 
 footer()
