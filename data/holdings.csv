@@ -1,5 +1,6 @@
 sleeve,ticker,name,weight,thesis
-Quantum Computing,QPUX,Defiance 2X Daily Long Pure Quantum ETF,0.209415,Leveraged bet on quantum computing hardware.
-Digital Assets,BITW,Bitwise 10 Crypto Index ETF,0.202675,Broad crypto index held on a cycle view.
-Physical Infrastructure,ELOL,Leverage Shares 100% TSLA & 100% SPCX Daily ETF,0.2105,Tesla and SpaceX at 200% notional.
-Unallocated Cash,USD,Undeployed,0.37741,Dry powder held between entries.
+Quantum Computing,QTUP,Defiance Pure Quantum ETF,---,---.
+Digital Assets,BITW,Bitwise 10 Crypto Index ETF,---,Broad crypto index held on a cycle view.
+Aerospace & Robotics,ELOL,Leverage Shares 100% TSLA & 100% SPCX Daily ETF,---,Tesla and SpaceX at 200% notional.
+Optics & Photonics,LAZR,Tema Photonics & Optical ETF,---,---,
+Unallocated Cash,USD,Undeployed,---,---.
